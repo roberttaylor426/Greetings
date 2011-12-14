@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, GreetingsActivity!</string>
+    <string name="app_name">Greetings</string>
+    <string name="sex">Sex</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="salutation">Salutation</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+
+</resources>

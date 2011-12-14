@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://robobinding.org/robobinding.android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sex" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        
+        <RadioButton 
+            android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="@string/male"
+        	binding:onClick="maleSelected" />
+        
+        <RadioButton 
+            android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="@string/female"
+        	binding:onClick="femaleSelected" />
+        
+    </RadioGroup>
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/salutation" />
+    
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        binding:enabled="{salutationsSpinnerEnabled}"
+        binding:source="{salutations}"
+        binding:itemLayout="@layout/spinner_item"
+        binding:dropdownLayout="@layout/spinner_dropdown_item"
+        binding:onItemSelected="salutationSelected" />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/first_name" />
+    
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        binding:text="${firstName}"
+        binding:enabled="{firstNameInputEnabled}" />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/last_name" />
+    
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        binding:text="${lastName}"
+        binding:enabled="{lastNameInputEnabled}" />
+    
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        binding:text="{greeting}" />
+</LinearLayout>
