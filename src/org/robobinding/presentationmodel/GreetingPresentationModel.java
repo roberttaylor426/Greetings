@@ -34,8 +34,8 @@ public class GreetingPresentationModel {
 		return sex != Sex.Undecided;
 	}
 	
-	@ItemPresentationModel(SalutationItemPresentationModel.class)
 	@DependsOnStateOf("sex")
+	@ItemPresentationModel(SalutationItemPresentationModel.class)
 	public List<Salutation> getSalutations() {
 		return sex == Sex.Female ? Salutation.getFemaleSalutations() : Salutation.getMaleSalutations();
 	}
