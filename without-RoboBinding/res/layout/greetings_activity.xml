@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sex" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        
+        <RadioButton 
+            android:id="@+id/male_button"
+            android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="@string/male" />
+        
+        <RadioButton 
+            android:id="@+id/female_button"
+            android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="@string/female" />
+        
+    </RadioGroup>
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/salutation" />
+    
+    <Spinner
+        android:id="@+id/salutations_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false" />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/first_name" />
+    
+    <EditText
+        android:id="@+id/first_name_input"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false" />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/last_name" />
+    
+    <EditText
+        android:id="@+id/last_name_input"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false" />
+    
+    <TextView
+        android:id="@+id/greeting_label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" />
+</LinearLayout>
