@@ -40,6 +40,8 @@ public class GreetingsActivity extends Activity {
         registerViewListeners();
         
         updateSalutationsSpinner();
+        
+        updateGreetingMessage();
 	}
 
 	private void inflateViews() {
@@ -125,13 +127,15 @@ public class GreetingsActivity extends Activity {
 	
 	private void maleSelected() {
 		sex = Sex.Male;
-		salutationsSpinner.setEnabled(true);
-		firstNameInput.setEnabled(true);
-		updateSalutationsSpinner();
+		sexUpdated();
 	}
-	
+
 	private void femaleSelected() {
 		sex = Sex.Female;
+		sexUpdated();
+	}
+	
+	private void sexUpdated() {
 		salutationsSpinner.setEnabled(true);
 		firstNameInput.setEnabled(true);
 		updateSalutationsSpinner();
@@ -160,21 +164,6 @@ public class GreetingsActivity extends Activity {
 		salutationsAdapter = new ArrayAdapter<Salutation>(this, R.layout.spinner_item, getSalutations());
         salutationsAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
         salutationsSpinner.setAdapter(salutationsAdapter);
-        
-      //final LayoutInflater layoutInflater = (LayoutInflater)getSystemService(LAYOUT_INFLATER_SERVICE);
-        
-//		{
-//
-//	@Override
-//	public View getDropDownView(int position, View convertView,	ViewGroup parent) {
-//		
-//		TextView dropdownView = (TextView)layoutInflater.inflate(R.layout.spinner_dropdown_item, null);
-//		dropdownView.setText(getItem(position).toString());
-//		this.set
-//		return dropdownView;
-//	}
-//	
-//};
 	}
 	
 	private void updateGreetingMessage() {

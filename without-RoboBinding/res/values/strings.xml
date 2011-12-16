@@ -2,7 +2,7 @@
 <resources>
 
     <string name="hello">Hello World, GreetingsActivity!</string>
-    <string name="app_name">Greetings</string>
+    <string name="app_name">Greetings-No-RB</string>
     <string name="sex">Sex</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
