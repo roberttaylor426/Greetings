@@ -14,5 +14,4 @@ public class SalutationItemPresentationModel implements ItemPresentationModel<Sa
 	public void updateData(int index, Salutation salutation) {
 		this.salutation = salutation;
 	}
-
 }

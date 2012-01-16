@@ -37,7 +37,7 @@ public class GreetingPresentationModel {
 	@DependsOnStateOf("sex")
 	@ItemPresentationModel(SalutationItemPresentationModel.class)
 	public List<Salutation> getSalutations() {
-		return sex == Sex.Female ? Salutation.getFemaleSalutations() : Salutation.getMaleSalutations();
+		return sex == Sex.Female ? Salutation.forFemales() : Salutation.forMales();
 	}
 	
 	public void salutationSelected(ItemClickEvent event) {
