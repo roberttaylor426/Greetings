@@ -14,8 +14,8 @@ public class GreetingPresentationModel {
 
 	private Sex sex = Sex.Undecided;
 	private Salutation salutation = Salutation.Undecided;
-	private String firstName;
-	private String lastName;
+	private String firstname;
+	private String lastname;
 	
 	public void maleSelected() {
 		setSex(Sex.Male);
@@ -48,37 +48,37 @@ public class GreetingPresentationModel {
 		this.salutation = salutation;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public String getFirstname() {
+		return firstname;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public String getLastname() {
+		return lastname;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 	
 	@DependsOnStateOf("sex")
-	public boolean isFirstNameInputEnabled() {
-		return sex != Sex.Undecided;
+	public boolean isFirstnameInputEnabled() {
+		return isSalutationsSpinnerEnabled();
 	}
 	
 	@DependsOnStateOf("firstName")
-	public boolean isLastNameInputEnabled() {
-		return !TextUtils.isEmpty(firstName);
+	public boolean isLastnameInputEnabled() {
+		return !TextUtils.isEmpty(firstname);
 	}
 	
 	@DependsOnStateOf({"salutation", "firstName", "lastName"})
 	public String getGreeting() {
-		if (TextUtils.isEmpty(lastName))
+		if (TextUtils.isEmpty(lastname))
 			return "Please enter all details above";
 		
-		return "Hello " + salutation + " " + firstName + " " + lastName + "!";
+		return "Hello " + salutation + " " + firstname + " " + lastname + "!";
 	}
 }

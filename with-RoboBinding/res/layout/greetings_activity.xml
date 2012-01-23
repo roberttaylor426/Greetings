@@ -50,8 +50,8 @@
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        bind:text="${firstName}"
-        bind:enabled="{firstNameInputEnabled}" />
+        bind:enabled="{firstnameInputEnabled}"
+        bind:text="${firstname}" />
     
     <TextView
         android:layout_width="wrap_content"
@@ -61,8 +61,8 @@
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        bind:text="${lastName}"
-        bind:enabled="{lastNameInputEnabled}" />
+        bind:enabled="{lastnameInputEnabled}"
+        bind:text="${lastname}" />
     
     <TextView
         android:layout_width="fill_parent"
