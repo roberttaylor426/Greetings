@@ -69,12 +69,12 @@ public class GreetingPresentationModel {
 		return isSalutationsSpinnerEnabled();
 	}
 	
-	@DependsOnStateOf("firstName")
+	@DependsOnStateOf("firstname")
 	public boolean isLastnameInputEnabled() {
 		return !TextUtils.isEmpty(firstname);
 	}
 	
-	@DependsOnStateOf({"salutation", "firstName", "lastName"})
+	@DependsOnStateOf({"salutation", "firstname", "lastname"})
 	public String getGreeting() {
 		if (TextUtils.isEmpty(lastname))
 			return "Please enter all details above";
