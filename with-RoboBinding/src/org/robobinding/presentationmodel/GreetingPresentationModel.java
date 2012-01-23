@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.robobinding.DependsOnStateOf;
 import org.robobinding.ItemPresentationModel;
-import org.robobinding.binding.viewattribute.ItemClickEvent;
 import org.robobinding.presentationmodelaspects.PresentationModel;
+import org.robobinding.viewattribute.adapterview.ItemClickEvent;
 
 import android.text.TextUtils;
 

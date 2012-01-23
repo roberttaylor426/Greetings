@@ -1,6 +1,6 @@
 package org.robobinding;
 
-import org.robobinding.binding.Binder;
+import org.robobinding.binder.Binder;
 import org.robobinding.presentationmodel.GreetingPresentationModel;
 
 import android.app.Activity;
