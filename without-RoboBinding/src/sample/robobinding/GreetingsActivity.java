@@ -21,13 +21,13 @@ public class GreetingsActivity extends Activity {
 
 	private RadioButton maleButton, femaleButton;
 	private Spinner salutationsSpinner;
-	private EditText firstNameInput, lastNameInput;
+	private EditText firstnameInput, lastnameInput;
 	private TextView greetingTextView;
 	
 	private Sex sex = Sex.Undecided;
 	private Salutation salutation = Salutation.Undecided;
-	private String firstName;
-	private String lastName;
+	private String firstname;
+	private String lastname;
 	private ArrayAdapter<Salutation> salutationsAdapter;
 	
 	@Override
@@ -48,8 +48,8 @@ public class GreetingsActivity extends Activity {
 		maleButton = (RadioButton)findViewById(R.id.male_button);
 		femaleButton = (RadioButton)findViewById(R.id.female_button);
 		salutationsSpinner = (Spinner)findViewById(R.id.salutations_spinner);
-		firstNameInput = (EditText)findViewById(R.id.first_name_input);
-		lastNameInput = (EditText)findViewById(R.id.last_name_input);
+		firstnameInput = (EditText)findViewById(R.id.firstname_input);
+		lastnameInput = (EditText)findViewById(R.id.lastname_input);
 		greetingTextView = (TextView)findViewById(R.id.greeting_label);
 	}
 	
@@ -86,7 +86,7 @@ public class GreetingsActivity extends Activity {
 			
         });
         
-        firstNameInput.addTextChangedListener(new TextWatcher(){
+        firstnameInput.addTextChangedListener(new TextWatcher(){
 
 			@Override
 			public void afterTextChanged(Editable arg0) {
@@ -100,12 +100,12 @@ public class GreetingsActivity extends Activity {
 			@Override
 			public void onTextChanged(CharSequence s, int start, int before,
 					int count) {
-				setFirstName(s);
+				setFirstname(s);
 			}
         	
         });
         
-        lastNameInput.addTextChangedListener(new TextWatcher(){
+        lastnameInput.addTextChangedListener(new TextWatcher(){
 
 			@Override
 			public void afterTextChanged(Editable arg0) {
@@ -119,7 +119,7 @@ public class GreetingsActivity extends Activity {
 			@Override
 			public void onTextChanged(CharSequence s, int start, int before,
 					int count) {
-				setLastName(s);
+				setLastname(s);
 			}
         	
         });
@@ -137,7 +137,7 @@ public class GreetingsActivity extends Activity {
 	
 	private void sexUpdated() {
 		salutationsSpinner.setEnabled(true);
-		firstNameInput.setEnabled(true);
+		firstnameInput.setEnabled(true);
 		updateSalutationsSpinner();
 	}
 	
@@ -149,14 +149,14 @@ public class GreetingsActivity extends Activity {
 		return sex == Sex.Female ? Salutation.getFemaleSalutations() : Salutation.getMaleSalutations();
 	}
 	
-	private void setFirstName(CharSequence s) {
-		firstName = s.toString();
-		lastNameInput.setEnabled(!TextUtils.isEmpty(firstName));
+	private void setFirstname(CharSequence s) {
+		firstname = s.toString();
+		lastnameInput.setEnabled(!TextUtils.isEmpty(firstname));
 		updateGreetingMessage();
 	}
 	
-	private void setLastName(CharSequence s) {
-		lastName = s.toString();
+	private void setLastname(CharSequence s) {
+		lastname = s.toString();
 		updateGreetingMessage();
 	}
 	
@@ -169,10 +169,10 @@ public class GreetingsActivity extends Activity {
 	private void updateGreetingMessage() {
 		String greetingMessage;
 		
-		if (TextUtils.isEmpty(lastName))
+		if (TextUtils.isEmpty(lastname))
 			greetingMessage = "Please enter all details above";
 		else
-			greetingMessage = "Hello " + salutation + " " + firstName + " " + lastName + "!";
+			greetingMessage = "Hello " + salutation + " " + firstname + " " + lastname + "!";
 		
 		greetingTextView.setText(greetingMessage);
 	}
