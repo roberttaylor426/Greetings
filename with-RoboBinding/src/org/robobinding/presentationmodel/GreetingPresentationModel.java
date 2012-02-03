@@ -2,9 +2,6 @@ package org.robobinding.presentationmodel;
 
 import java.util.List;
 
-import org.robobinding.DependsOnStateOf;
-import org.robobinding.ItemPresentationModel;
-import org.robobinding.presentationmodelaspects.PresentationModel;
 import org.robobinding.viewattribute.adapterview.ItemClickEvent;
 
 import android.text.TextUtils;
@@ -17,7 +14,7 @@ public class GreetingPresentationModel {
 	private String firstname;
 	private String lastname;
 	
-	public void maleSelected() {
+    public void maleSelected() {
 		setSex(Sex.Male);
 	}
 
